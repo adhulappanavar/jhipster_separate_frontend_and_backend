@@ -1,0 +1,68 @@
+
+application {
+	config {
+    	baseName Gateway
+        applicationType gateway
+        packageName com.ps.banking.retail
+        serviceDiscoveryType eureka
+        authenticationType jwt
+        databaseType sql
+        devDatabaseType h2Memory
+        buildTool gradle
+        skipClient true
+        cacheProvider no
+    }
+}
+
+application {
+	config {
+    	baseName CustomerUI
+        applicationType gateway
+        packageName com.ps.banking.retail
+        serviceDiscoveryType eureka
+        authenticationType jwt
+        databaseType sql
+        devDatabaseType h2Memory
+        buildTool gradle
+        dtoSuffix Dto
+        skipServer true
+        clientFramework react
+        cacheProvider no
+    }
+    entities *
+}
+entity Address(addresses) {
+    line1 String,
+    line2 String,
+    line3 String,
+    city String,
+    county String,
+    countryCode String,
+    state String,
+    postCode String,
+    addressType AddressType
+}
+entity Customer(customers) {
+    firstName String,
+    middleName String,
+    lastName String,
+    legalName String,
+    title String,
+    suffix String,
+    customerNumber String,
+    mobilePhone String,
+    email String,
+    dateOfBirth Instant,
+    relationshipStatus String,
+    employmentStatus String,
+    kycStatus KYCStatus
+}
+enum AddressType {
+    PERMANENT, CURRENT
+}
+enum KYCStatus {
+    INPROGRESS, DONE
+}
+relationship OneToMany {
+    Customer to Address
+}
