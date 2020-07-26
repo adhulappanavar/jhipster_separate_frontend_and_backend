@@ -1,9 +1,0 @@
-{
-  "customerUiApp": {
-    "AddressType": {
-      "null": "",
-      "PERMANENT": "PERMANENT",
-      "CURRENT": "CURRENT"
-    }
-  }
-}
