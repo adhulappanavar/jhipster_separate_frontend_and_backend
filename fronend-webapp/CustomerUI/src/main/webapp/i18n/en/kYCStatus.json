@@ -1,0 +1,9 @@
+{
+  "customerUiApp": {
+    "KYCStatus": {
+      "null": "",
+      "INPROGRESS": "INPROGRESS",
+      "DONE": "DONE"
+    }
+  }
+}
