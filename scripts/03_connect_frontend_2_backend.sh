@@ -1,4 +1,4 @@
-cd fronend-webapp/CustomerUI
+cd frontend-webapp/CustomerUI
 
 
 sed -i '' "s|isAuthenticated = action.payload && action.payload.data && action.payload.data.activated|isAuthenticated = true|g" src/main/webapp/app/shared/reducers/authentication.ts
